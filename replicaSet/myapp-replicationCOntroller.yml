@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: myapp-replicationController
+  name: myapp-rc
   labels:
     app: myapp
     appType: backend
