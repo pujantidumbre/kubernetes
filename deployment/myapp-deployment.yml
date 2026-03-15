@@ -2,23 +2,28 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myapp-deployment
+
 spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app-type: backend
+      app: myapp
+
   template:
     metadata:
       name: myapp-v1
       labels:
         app-type: backend
         app: myapp
+
     spec:
-      containers:
-        - image: dhananjay01/myapp:ubux64
-          name: myapp-v1
-	  ports:
-          - containerPort: 8080
       imagePullSecrets:
-        - name: dockerhub-secrets
-  replicas: 1
-  selector:
-    matchLabels:
-      app-type: backend
-      app: myapp
+      - name: dockerhub-secrets
+
+      containers:
+      - name: myapp-v1
+        image: dhananjay01/myapp:ubux64
+        ports:
+        - containerPort: 8080
