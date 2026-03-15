@@ -9,14 +9,13 @@ spec:
   template:
     metadata:
       name: myapp-v1
-      namespace: backend-ns
       labels:
         app-type: backend
         app: my-app
     spec:
       containers:
-      - image: dhananjay01/myapp:ubux64
-        name: myapp-v1
+        - image: dhananjay01/myapp:ubux64
+          name: myapp-v1
       imagePullSecrets:
         - name: dockerhub-secrets
   replicas: 3
