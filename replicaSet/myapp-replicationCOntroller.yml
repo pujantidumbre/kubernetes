@@ -21,6 +21,5 @@ spec:
         - name: dockerhub-secrets
   replicas: 3
   selector:
-    matchLabels:
-      app-type: backend
-      app: my-app
+    app-type: backend
+    app: my-app
