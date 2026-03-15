@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name:myapp-replicaset
+  name: myapp-replicaset
   labels:
     app: myapp
-    appType: backend
+    appType: back-end
 spec:
   template:
     metadata: 
@@ -19,7 +19,7 @@ spec:
         name: myapp-v1
     imagePullSecrets: 
     - name: dockerhub-secrets
-  replicas:3
+  replicas: 3
   selector: 
     matchLabels:
       app-type: backend
