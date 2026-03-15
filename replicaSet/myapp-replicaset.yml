@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name:myapp-replicaset
+  labels:
+    app: myapp
+    appType: backend
+spec:
+  template:
+    metadata: 
+      name: myapp-v1
+      namespace: backend-ns
+      labels:
+        app-type: backend
+        app: my-app
+    spec:
+      containers:
+      - image: dhananjay01/myapp:ubux64
+        name: myapp-v1
+    imagePullSecrets: 
+    - name: dockerhub-secrets
+  replicas:3
+  selector: 
+    matchLabels:
+      app-type: backend
+      app: my-app
