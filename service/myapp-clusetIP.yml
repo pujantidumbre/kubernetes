@@ -4,7 +4,7 @@ metadata:
   name: myapp-cstrip
 spec:
   selector:
-    app: myapp
+    app: myapp-deploy
     app-type: backend
   ports:
   - port: 8080

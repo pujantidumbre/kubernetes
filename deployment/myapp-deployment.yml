@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: myapp-deployment
   labels:
-    app: myapp
+    app: myapp-deploy
     app-type: backend
 spec:
   template:
@@ -18,7 +18,7 @@ spec:
           name: myapp-v1
       imagePullSecrets:
         - name: dockerhub-secrets
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app-type: backend
