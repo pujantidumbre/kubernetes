@@ -4,14 +4,14 @@ metadata:
   name: myapp-deployment
   labels:
     app: myapp
-    appType: back-end
+    app-type: backend
 spec:
   template:
     metadata:
       name: myapp-v1
       labels:
         app-type: backend
-        app: my-app
+        app: myapp
     spec:
       containers:
         - image: dhananjay01/myapp:ubux64
@@ -22,4 +22,4 @@ spec:
   selector:
     matchLabels:
       app-type: backend
-      app: my-app
+      app: myapp

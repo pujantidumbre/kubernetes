@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: myapp
-    appType: back-end
+    app-type: backend
   ports:
   - port: 8080
     targetPort: 8080
