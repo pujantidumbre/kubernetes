@@ -17,8 +17,8 @@ spec:
       containers:
       - image: dhananjay01/myapp:ubux64
         name: myapp-v1
-    imagePullSecrets: 
-    - name: dockerhub-secrets
+      imagePullSecrets: 
+        - name: dockerhub-secrets
   replicas: 3
   selector: 
     matchLabels:
