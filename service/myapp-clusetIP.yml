@@ -3,8 +3,9 @@ kind: Service
 metadata: 
   name: myapp-cstrip
 spec:
+  type: ClusterIP
   selector:
-    app: myapp-deploy
+    app: myapp
     app-type: backend
   ports:
   - port: 8080
